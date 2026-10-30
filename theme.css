@@ -151,7 +151,7 @@ dialog p,dialog li{color:#b8aebb}
 @media(max-width:760px){.manifesto-top{margin-bottom:40px}.manifesto-line{white-space:normal;justify-content:flex-start;font-size:clamp(40px,13vw,64px)}.manifesto-line.reverse{justify-content:flex-end}.manifesto-line img{display:none}}
 
 /* cartoon sans fond : PNG transparent, posé directement sur le thème sombre */
-.cartoon-frame{background-image:url('./avatar-frames-transparent.png');mix-blend-mode:normal;-webkit-mask-image:none;mask-image:none;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.cartoon-frame{background-image:url('./avatar-frames-transparent.webp');mix-blend-mode:normal;-webkit-mask-image:none;mask-image:none;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
 .stage{background:radial-gradient(ellipse at 50% 55%,rgba(255,155,210,.22),transparent 62%);box-shadow:none;border-radius:0;padding:10px}
 .stage .cartoon-frame{border-radius:0}
 
