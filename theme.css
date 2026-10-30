@@ -1,0 +1,272 @@
+/* Thème « Spectacular » : fusion du portfolio Creative (prune, rose, vert acide) avec le contenu de Zineb.
+   Se charge APRÈS styles.css. Pour revenir au thème clair, retirer le <link> theme.css dans index.html. */
+:root{--paper:#170d1d;--ink:#f8f4f1;--muted:#a59ca9;--line:rgba(255,255,255,.14);--accent:#ff9bd2;--plum:#24122d;--acid:#d7ff61;--deep:#170d1d;--stage:#f5f2f7;--cursor-x:50vw;--cursor-y:50vh}
+html{background:var(--deep)}
+body{font-family:'DM Sans',Arial,sans-serif;background:radial-gradient(circle at 75% 6%,rgba(153,62,157,.16),transparent 28rem),var(--deep);color:var(--ink);overflow-x:hidden}
+::selection{background:var(--accent);color:var(--deep)}
+h1,h2,h3{font-family:'DM Sans',Arial,sans-serif}
+h1 em,h2 em,.signature,.cartoon-greeting,.journey-date,.code-mark{font-family:'Instrument Serif',Georgia,serif}
+h1 em{color:var(--accent);font-style:italic;font-weight:400;letter-spacing:-3px}
+h1{font-weight:400}
+.eyebrow{color:var(--accent)}
+.skip-link{color:var(--deep);background:var(--acid)}
+a:focus-visible,button:focus-visible{outline-color:var(--acid)}
+
+/* curseur lumineux */
+.cursor-glow{position:fixed;z-index:50;top:0;left:0;width:28rem;height:28rem;pointer-events:none;background:radial-gradient(circle,rgba(255,131,203,.09),transparent 65%);transform:translate(calc(var(--cursor-x) - 50%),calc(var(--cursor-y) - 50%));mix-blend-mode:screen}
+
+/* en-tête */
+.header{background:transparent;border-bottom:1px solid var(--line);position:relative}
+.monogram{font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-5px}
+.monogram>span{color:var(--accent)}
+.brand-name small{color:var(--muted)}
+.header nav a{color:#c3bac5;position:relative}
+.header nav a:hover{color:var(--ink)}
+.header nav a:after{content:'';position:absolute;left:0;bottom:-6px;width:0;height:1px;background:var(--accent);transition:width .25s}
+.header nav a:hover:after{width:100%}
+.lang{border-color:var(--line);color:var(--ink)}
+.contact-link{border-bottom-color:var(--accent);color:var(--ink)}
+.menu-toggle{color:var(--ink)}
+
+/* hero */
+.hero-scroll{height:auto;min-height:0;background:linear-gradient(90deg,rgba(255,255,255,.035) 1px,transparent 1px) 0 0/8.333vw 100%,radial-gradient(circle at 74% 48%,rgba(212,81,162,.15),transparent 26rem)}
+.hero-sticky{position:relative;height:auto;min-height:760px;max-height:none;padding-bottom:0}
+.hero-copy h1{font-size:clamp(52px,7vw,112px);letter-spacing:-.06em;line-height:.92;margin:30px 0 24px}
+.hero-copy h1>span{display:inline-block;animation:titleIn 1.1s cubic-bezier(.16,1,.3,1) both}
+.hero-copy h1>span:nth-of-type(2){animation-delay:.12s}
+.hero-copy h1 em{animation:titleIn 1.1s .24s cubic-bezier(.16,1,.3,1) both}
+.hero-description{color:var(--muted)}
+.button{background:var(--accent);border-color:var(--accent);color:var(--deep);font-weight:600;box-shadow:0 10px 30px rgba(255,155,210,.25);border-radius:999px;padding:15px 24px}
+.button:hover{background:var(--acid);border-color:var(--acid);color:var(--deep)}
+.quiet-link{border-bottom-color:#695e6e}
+.cv-hero{border:1px solid var(--line);border-radius:999px;padding:14px 22px;color:var(--ink)}
+.cv-hero:hover{background:var(--ink);color:var(--deep)}
+.availability{color:#c3bac5}
+.availability>i{background:var(--acid);box-shadow:0 0 .8rem var(--acid)}
+.signature{color:var(--accent)}
+.hero-signature>span:last-child{color:#8c8190;border-left-color:var(--line)}
+.hero-bottom{border-top-color:var(--line);color:#8c8190}
+.hero-bottom>span:last-child,.hero-bottom a{color:var(--accent)}
+
+/* cartoon : posé sur un « portail » clair pour garder ses couleurs */
+.stage{position:relative;max-width:380px;margin:0 auto;padding:18px 18px 8px;background:var(--stage);isolation:isolate;border-radius:200px 200px 28px 28px;box-shadow:0 0 70px rgba(223,78,166,.28),inset 0 0 40px rgba(255,255,255,.4)}
+.stage .cartoon-frame{border-radius:180px 180px 16px 16px}
+.stage:before,.stage:after{content:'';position:absolute;left:50%;top:46%;border:1px solid rgba(255,155,210,.6);border-radius:50%;pointer-events:none;z-index:-1}
+.stage:before{width:150%;height:62%;transform:translate(-50%,-50%) rotate(-18deg);animation:orbitOne 10s ease-in-out infinite alternate}
+.stage:after{width:84%;height:128%;border-color:rgba(215,255,97,.4);transform:translate(-50%,-50%) rotate(30deg);animation:orbitTwo 12s ease-in-out infinite alternate}
+.stage-sm{max-width:330px}
+.cartoon-panel{padding:25px 10px}
+.cartoon-panel .stage+.cartoon-greeting{margin-top:22px}
+.cartoon-greeting{color:var(--accent);font-size:26px}
+.cartoon-design p{color:var(--muted)}
+h2 em{color:var(--accent)}
+
+/* bandeau défilant */
+.marquee{overflow:hidden;background:var(--acid);color:var(--deep);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.marquee>div{display:flex;width:max-content;align-items:center;padding:.9rem 0;animation:marquee 32s linear infinite}
+.marquee span{padding:0 2.2rem;font-size:12px;font-weight:600;letter-spacing:.13em;text-transform:uppercase}
+.marquee b{font-size:11px}
+
+/* tampon rotatif */
+.hero-stamp{position:absolute;right:4%;bottom:70px;width:128px;height:128px;color:var(--acid);z-index:3}
+.hero-stamp svg{width:100%;height:100%;animation:spin 18s linear infinite}
+.hero-stamp text{fill:currentColor;font-size:9px;letter-spacing:2.25px;font-family:'DM Sans',sans-serif}
+.hero-stamp>span{position:absolute;top:50%;left:50%;font-size:24px;transform:translate(-50%,-50%)}
+
+/* sections */
+.section{border-top-color:var(--line)}
+.section-heading>p,.project>p{color:var(--muted)}
+h2{font-weight:400;letter-spacing:-.05em}
+.project-art{border:1px solid var(--line);border-radius:6px}
+.project-art:hover{box-shadow:0 26px 60px rgba(223,78,166,.25)}
+.project-top h3{font-family:'Instrument Serif',Georgia,serif;font-size:32px;font-weight:400;letter-spacing:-.02em}
+.arrow{border-color:rgba(255,255,255,.4);color:var(--ink)}
+.arrow:hover{background:var(--acid);border-color:var(--acid);color:var(--deep);transform:rotate(45deg)}
+.tags>span{border-color:rgba(255,255,255,.22);border-radius:999px;color:#d8cfdb}
+.skills{background:var(--plum);border-top:1px solid var(--line)}
+.skill-row{border-top-color:var(--line);position:relative}
+.skill-row:hover{padding-left:12px;background:linear-gradient(90deg,rgba(215,255,97,.08),transparent)}
+.skill-tags>span{border-color:rgba(255,255,255,.2);border-radius:999px}
+.code-mark{color:var(--accent)}
+.cert{background:rgba(255,255,255,.04);border-color:var(--line);border-radius:6px;color:var(--ink)}
+.cert:hover{border-color:var(--acid);background:rgba(215,255,97,.07)}
+.cert-date,.cert-arrow{color:var(--acid)}
+.cert-issuer{color:var(--muted)}
+.about-left p,.journey p{color:var(--muted)}
+.about-languages{border-top-color:var(--line);color:#a99fac}
+.journey-date{color:var(--acid);font-size:15px}
+.journey article{border-top-color:var(--line)}
+.journey article>div>span,.journey-top{color:#a888a0}
+
+/* contact : vert acide comme le portfolio d'origine */
+.contact{background:var(--acid);color:var(--deep);border-top:0;border-radius:6px;overflow:hidden;position:relative}
+.contact .eyebrow{color:#5c6a2a}
+.contact h2{color:var(--deep);font-family:'Instrument Serif',Georgia,serif;letter-spacing:-.06em}
+.contact-star{color:#78305d}
+.contact-bottom p{color:#4b5a1d}
+.email{border-bottom-color:rgba(23,13,29,.4);color:var(--deep)}
+.email>span{color:#78305d}
+#copy-email,.cv-link{color:var(--deep)}
+.copy-status{color:#78305d}
+footer{color:var(--muted)}
+.footer-brand{color:var(--ink)}
+.footer-brand>span{color:var(--muted)}
+
+/* fenêtre de détails */
+dialog{background:#1f1226;border-color:var(--line);color:var(--ink)}
+dialog::backdrop{background:#0d0810cc}
+dialog p,dialog li{color:#b8aebb}
+.dialog-top button{color:var(--ink)}
+.gallery-tabs button{border-color:var(--line);color:var(--ink)}
+.gallery-tabs button[aria-pressed=true],#project-gallery[data-project=aura] .gallery-tabs button[aria-pressed=true]{background:var(--acid);border-color:var(--acid);color:var(--deep)}
+.gallery-viewport{border-color:var(--line)}
+
+@keyframes titleIn{from{transform:translateY(60%) rotate(2deg);opacity:0}to{transform:none;opacity:1}}
+@keyframes marquee{to{transform:translateX(-50%)}}
+@keyframes orbitOne{to{transform:translate(-50%,-50%) rotate(10deg) scale(1.04)}}
+@keyframes orbitTwo{to{transform:translate(-50%,-50%) rotate(64deg) scale(.96)}}
+
+@media(max-width:760px){
+ .header nav{background:var(--deep)}
+ .hero-sticky{min-height:0;padding-bottom:30px}
+ .hero-copy h1{font-size:clamp(46px,14vw,70px)}
+ .hero-stamp{display:none}
+ .stage{max-width:300px}
+ .contact{padding:26px}
+}
+@media(prefers-reduced-motion:reduce){.cursor-glow{display:none}.marquee>div,.hero-stamp svg,.stage:before,.stage:after{animation:none!important}}
+.stage{width:100%}
+.cert-grid{grid-template-columns:repeat(auto-fit,minmax(215px,1fr))}
+.cartoon-design .stage{justify-self:center}
+
+/* manifeste */
+.sr-only{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.manifesto{padding:clamp(70px,10vw,150px) 0}
+.manifesto-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:70px;color:var(--muted);font-size:13px}
+.manifesto-line{display:flex;align-items:center;justify-content:center;gap:clamp(12px,2vw,32px);padding-block:.05em;font-size:clamp(46px,8.2vw,124px);font-weight:300;letter-spacing:-.065em;line-height:1.02;white-space:nowrap}
+.manifesto-line em{color:var(--accent);font-family:'Instrument Serif',Georgia,serif;font-weight:400;letter-spacing:-.04em}
+.manifesto-line.reverse em{color:var(--acid)}
+.manifesto-line img{width:clamp(60px,10vw,150px);height:clamp(40px,5vw,76px);border-radius:999px;object-fit:cover;object-position:top;filter:saturate(.6);transition:width .5s cubic-bezier(.16,1,.3,1),filter .4s}
+.manifesto-line:hover img{width:clamp(110px,19vw,280px);filter:saturate(1.1)}
+@media(max-width:760px){.manifesto-top{margin-bottom:40px}.manifesto-line{white-space:normal;justify-content:flex-start;font-size:clamp(40px,13vw,64px)}.manifesto-line.reverse{justify-content:flex-end}.manifesto-line img{display:none}}
+
+/* cartoon sans fond : PNG transparent, posé directement sur le thème sombre */
+.cartoon-frame{background-image:url('./avatar-frames-transparent.png');mix-blend-mode:normal;-webkit-mask-image:none;mask-image:none;filter:drop-shadow(0 18px 30px rgba(0,0,0,.35))}
+.stage{background:radial-gradient(ellipse at 50% 55%,rgba(255,155,210,.22),transparent 62%);box-shadow:none;border-radius:0;padding:10px}
+.stage .cartoon-frame{border-radius:0}
+
+/* ===== Logo OZ (v2) ===== */
+:root{--pink:var(--accent)}
+.brand{display:inline-flex;color:var(--ink)}
+.oz-logo{display:inline-flex;align-items:center;gap:.7rem;isolation:isolate}
+.oz-mark{width:4.6rem;height:auto;overflow:visible;filter:drop-shadow(0 0 0 rgba(255,155,210,0));transition:filter .4s ease,transform .5s cubic-bezier(.16,1,.3,1)}
+.oz-portal,.oz-cut{fill:none;stroke:currentColor;stroke-width:2.4}
+.oz-cut{transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.oz-echo{fill:none;stroke:var(--pink);stroke-width:.8;transform-box:fill-box;transform-origin:center}
+.oz-echo-one{opacity:.5;animation:logoOrbitOne 7s ease-in-out infinite alternate}
+.oz-echo-two{opacity:.3;animation:logoOrbitTwo 8s ease-in-out infinite alternate}
+.oz-zed,.oz-zed-shadow{fill:none;stroke-linecap:square;stroke-linejoin:bevel}
+.oz-zed{stroke:var(--ink);stroke-width:2.8}
+.oz-zed-shadow{stroke:var(--pink);stroke-width:2.8;opacity:.72;transition:transform .4s cubic-bezier(.16,1,.3,1)}
+.oz-flare{fill:var(--acid);transform-box:fill-box;transform-origin:center;animation:logoFlare 3s ease-in-out infinite}
+.oz-signal{fill:var(--acid);stroke:none;filter:drop-shadow(0 0 .3rem var(--acid))}
+.oz-name{display:flex;flex-direction:column;justify-content:center;line-height:1;font-style:normal}
+.oz-name b{font-size:.78rem;font-weight:600;letter-spacing:.24em}
+.oz-name small{margin-top:.45rem;color:var(--muted);font-size:.52rem;font-weight:500;letter-spacing:.16em;white-space:nowrap}
+.brand:hover .oz-mark{filter:drop-shadow(0 0 .7rem rgba(255,155,210,.35));transform:skewX(-4deg)}
+.brand:hover .oz-zed-shadow{transform:translate(-3px,2px)}
+.brand:hover .oz-cut{transform:translate(2px,-2px)}
+.brand:hover .oz-echo-one{animation-duration:1.2s}
+.footer-brand{font-size:inherit;margin-right:auto}
+@keyframes logoOrbitOne{to{transform:rotate(22deg) scaleX(.82)}}
+@keyframes logoOrbitTwo{to{transform:rotate(-28deg) scaleY(.86)}}
+@keyframes logoFlare{50%{opacity:.35;transform:rotate(45deg) scale(.68)}}
+
+/* ===== Ouverture : le logo se dessine ===== */
+.splash{position:fixed;inset:0;z-index:200;display:grid;place-items:center;background:var(--deep);animation:splashOut .7s 2s cubic-bezier(.7,0,.2,1) forwards}
+.seen .splash{display:none}
+.oz-big{flex-direction:column;gap:1.4rem}
+.oz-big .oz-mark{width:min(62vw,17rem)}
+.oz-big .oz-portal,.oz-big .oz-cut,.oz-big .oz-zed,.oz-big .oz-zed-shadow{stroke-dasharray:1;stroke-dashoffset:1;animation:draw 1.1s cubic-bezier(.65,0,.35,1) forwards}
+.oz-big .oz-zed-shadow{animation-delay:.25s}.oz-big .oz-zed{animation-delay:.4s}.oz-big .oz-cut{animation-delay:.7s}
+.oz-big .oz-flare,.oz-big .oz-signal{opacity:0;animation:pop .5s 1.15s forwards}
+.oz-big .oz-name{align-items:center;opacity:0;transform:translateY(10px);animation:rise .7s 1.1s forwards}
+.oz-big .oz-name b{font-size:clamp(.9rem,2.2vw,1.2rem)}
+.oz-big .oz-name small{font-size:clamp(.6rem,1.4vw,.78rem)}
+@keyframes draw{to{stroke-dashoffset:0}}
+@keyframes pop{to{opacity:1}}
+@keyframes rise{to{opacity:1;transform:none}}
+@keyframes splashOut{to{opacity:0;visibility:hidden;pointer-events:none}}
+
+/* ===== Barre de progression du scroll ===== */
+.scroll-progress{position:fixed;top:0;left:0;z-index:150;height:3px;width:100%;transform:scaleX(0);transform-origin:left;background:linear-gradient(90deg,var(--accent),var(--acid));box-shadow:0 0 14px rgba(255,155,210,.6)}
+
+/* ===== Cartoon : suit doucement le curseur ===== */
+.stage{translate:calc(var(--px,0)*18px) calc(var(--py,0)*12px);transition:translate .35s ease-out}
+.button,.cv-hero{transition:transform .25s ease-out,background .2s,color .2s,border-color .2s}
+
+@media(max-width:760px){.oz-mark{width:3.6rem}.oz-name small{display:none}.oz-name b{font-size:.7rem}}
+@media(prefers-reduced-motion:reduce){.splash{display:none}.scroll-progress{display:none}.oz-echo-one,.oz-echo-two,.oz-flare{animation:none!important}.stage{translate:none}}
+
+/* tour 2 */
+.hero-copy h1 .ch{display:inline-block;transition:transform .18s ease-out,color .18s;will-change:transform}
+.spark{position:fixed;z-index:180;pointer-events:none;font-size:16px;line-height:1;text-shadow:0 0 10px currentColor}
+.hero-copy h1 .word{display:inline-block;white-space:nowrap}
+
+/* ===== Tour 3 : bouton de thème + transitions de sections ===== */
+.theme-toggle{width:33px;height:33px;border:1px solid var(--line);border-radius:50%;background:transparent;color:var(--ink);font-size:15px;line-height:1;display:grid;place-items:center;transition:transform .4s cubic-bezier(.16,1,.3,1),background .2s}
+.theme-toggle:hover{transform:rotate(25deg);background:rgba(255,155,210,.15)}
+
+/* les blocs « s'ouvrent » en arrivant à l'écran */
+.wipe{clip-path:inset(7% 3% 0 3% round 48px);opacity:.4;transition:clip-path 1.1s cubic-bezier(.16,1,.3,1),opacity .9s ease}
+.wipe.in{clip-path:inset(0 0 0 0 round 0);opacity:1}
+.contact.wipe{clip-path:inset(10% 5% 0 5% round 48px)}
+.contact.wipe.in{clip-path:inset(0 0 0 0 round 6px)}
+@media(prefers-reduced-motion:reduce){.wipe{clip-path:none;opacity:1;transition:none}}
+
+/* ===== Thème clair (retrouve l'ambiance d'origine, garde le logo et le cartoon) ===== */
+html[data-theme=light]{--paper:#f5f1ee;--deep:#f5f1ee;--ink:#292329;--muted:#716a70;--line:#d9d1d3;--accent:#8b233b;--plum:#3c2939;--acid:#d7ff61;--stage:#f5f2f7}
+html[data-theme=light] body{background:radial-gradient(circle at 75% 6%,rgba(139,35,59,.07),transparent 28rem),var(--paper)}
+html[data-theme=light] ::selection{background:var(--accent);color:#fff}
+html[data-theme=light] .header nav a{color:var(--muted)}
+html[data-theme=light] .header nav a:hover{color:var(--ink)}
+html[data-theme=light] .button{color:#fff;box-shadow:0 10px 24px rgba(139,35,59,.25)}
+html[data-theme=light] .button:hover{background:var(--plum);border-color:var(--plum);color:#fff}
+html[data-theme=light] .hero-scroll{background:linear-gradient(90deg,rgba(0,0,0,.03) 1px,transparent 1px) 0 0/8.333vw 100%,radial-gradient(circle at 74% 48%,rgba(139,35,59,.09),transparent 26rem)}
+html[data-theme=light] .stage{background:radial-gradient(ellipse at 50% 55%,rgba(139,35,59,.12),transparent 62%)}
+html[data-theme=light] .cartoon-frame{filter:drop-shadow(0 18px 24px rgba(60,41,57,.22))}
+html[data-theme=light] .stage:before{border-color:rgba(139,35,59,.45)}
+html[data-theme=light] .stage:after{border-color:rgba(60,41,57,.3)}
+html[data-theme=light] .availability,html[data-theme=light] .hero-signature>span:last-child,html[data-theme=light] .hero-bottom{color:var(--muted)}
+html[data-theme=light] .availability>i{background:#3f9a63;box-shadow:0 0 .8rem #3f9a63}
+html[data-theme=light] .tags>span{color:var(--ink);border-color:#d5c9cf}
+html[data-theme=light] .arrow{color:var(--ink);border-color:#bdb2b9}
+html[data-theme=light] .arrow:hover{color:#fff;background:var(--accent);border-color:var(--accent)}
+html[data-theme=light] .cert{background:#fbf8f6;border-color:var(--line)}
+html[data-theme=light] .cert:hover{background:#fff;border-color:var(--accent)}
+html[data-theme=light] .cert-date,html[data-theme=light] .cert-arrow,html[data-theme=light] .journey-date{color:var(--accent)}
+html[data-theme=light] .journey article>div>span,html[data-theme=light] .journey-top{color:#9a7d8f}
+html[data-theme=light] .manifesto-line.reverse em{color:var(--plum)}
+html[data-theme=light] .contact{background:#e9dfe3}
+html[data-theme=light] .contact .eyebrow{color:var(--accent)}
+html[data-theme=light] .contact-bottom p{color:#8b7280}
+html[data-theme=light] .email{border-bottom-color:#bda2b0}
+html[data-theme=light] .email>span,html[data-theme=light] .contact-star,html[data-theme=light] .copy-status{color:var(--accent)}
+html[data-theme=light] dialog{background:var(--paper);color:var(--ink)}
+html[data-theme=light] dialog::backdrop{background:#281b2acc}
+html[data-theme=light] dialog p,html[data-theme=light] dialog li{color:var(--muted)}
+html[data-theme=light] .gallery-tabs button[aria-pressed=true],html[data-theme=light] #project-gallery[data-project=aura] .gallery-tabs button[aria-pressed=true]{background:var(--accent);border-color:var(--accent);color:#fff}
+html[data-theme=light] .scroll-progress{background:linear-gradient(90deg,var(--accent),var(--plum));box-shadow:none}
+html[data-theme=light] .cursor-glow{background:radial-gradient(circle,rgba(139,35,59,.07),transparent 65%);mix-blend-mode:normal}
+html[data-theme=light] .splash{background:var(--paper)}
+html[data-theme=light] .oz-flare,html[data-theme=light] .oz-signal{fill:var(--accent)}
+html[data-theme=light] .marquee{background:var(--plum);color:#f5f1ee}
+html[data-theme=light] .spark{text-shadow:none}
+
+/* thème clair : éléments décoratifs plus lisibles */
+html[data-theme=light] .hero-stamp{color:var(--accent)}
+html[data-theme=light] .code-mark{color:#d9a3b5}
+html[data-theme=light] .skills .code-mark{color:#e7b5c7}
+html[data-theme=light] .contact h2,html[data-theme=light] .email,html[data-theme=light] #copy-email,html[data-theme=light] .cv-link{color:var(--ink)}
+html[data-theme=light] .contact{color:var(--ink)}
+html[data-theme=light] .marquee b{color:var(--acid)}
